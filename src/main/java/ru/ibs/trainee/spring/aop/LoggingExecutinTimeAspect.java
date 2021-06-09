@@ -13,11 +13,13 @@ import org.springframework.stereotype.Component;
 public class LoggingExecutinTimeAspect {
 
     @Pointcut("execution(public * ru.ibs.trainee.spring.aop.BusinessLogic+.*())")
-    public void callAtBusinessMethods() {
+    public void callAtBusinessMethods() {}
 
-    }
+    @Pointcut("@annotation(ru.ibs.trainee.spring.aop.LogExecutionTime)")
+    public void callAtAnnotatedMethods() {}
 
-    @Around("callAtBusinessMethods()")
+//    @Around("callAtBusinessMethods()")
+    @Around("callAtAnnotatedMethods()")
     public Object measureTime(ProceedingJoinPoint pjp) throws Throwable {
         long start = System.currentTimeMillis();
         try {
