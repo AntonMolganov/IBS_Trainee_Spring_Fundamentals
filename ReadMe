@@ -1,0 +1,3 @@
+запуск контейнера mysql
+docker run --name trainee -e MYSQL_ROOT_PASSWORD=mysql -d mysql:latest
+
