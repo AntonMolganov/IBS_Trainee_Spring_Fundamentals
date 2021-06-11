@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Add new student</title>
+    </head>
+
+    <body>
+        <h1>Add new student</h1>
+        <p th:text="${addedText}"></p>
+        <form method="POST" action="/spring/mvc/add">
+            <p>Enter name
+                <input type="text" size="40" name="name">
+            </p>
+            <input type="submit" value="Add"/>
+        </form>
+
+    <br/>
+    <br/>
+    <a href="/spring/mvc/show">Show students</a>
+    </body>
+</html>
